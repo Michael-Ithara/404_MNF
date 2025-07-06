@@ -13,23 +13,28 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Left click
+        // mousePosition = Mouse.current.position.ReadValue();
+       /* if (Input.GetMouseButtonDown(1)) // Left click
         {
             Shoot();
-        }
+        } */
     }
 
-    void Shoot()
+    public void Shoot(InputAction.CallbackContext context)
     {
-        // Get mouse position
-        mousePosition = Mouse.current.position.ReadValue();
+        if (context.performed)
+        {
 
-        Vector2 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
-        // Direction from us to mouse
-        shootDirection  = (mousePosition - playerScreenPos).normalized;
+            // Get mouse position
+            mousePosition = Mouse.current.position.ReadValue();
 
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-        bullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(shootDirection.x, shootDirection.y) * bulletSpeed;
-        Destroy(bullet, 2f); // Destroy bullet after 2 seconds to prevent memory leaks
+            Vector2 playerScreenPos = Camera.main.WorldToScreenPoint(transform.position);
+            // Direction from us to mouse
+            shootDirection = (mousePosition - playerScreenPos).normalized;
+
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(shootDirection.x, shootDirection.y) * bulletSpeed;
+            Destroy(bullet, 2f); // Destroy bullet after 2 seconds to prevent memory leaks
+        }
     }
 }
