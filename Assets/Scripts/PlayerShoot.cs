@@ -24,7 +24,6 @@ public class PlayerShoot : MonoBehaviour
     {
         if (context.performed)
         {
-
             // Get mouse position
             mousePosition = Mouse.current.position.ReadValue();
 
@@ -35,6 +34,9 @@ public class PlayerShoot : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(shootDirection.x, shootDirection.y) * bulletSpeed;
             Destroy(bullet, 2f); // Destroy bullet after 2 seconds to prevent memory leaks
+
+            // Play shooting sound
+            SoundManager.instance.PlayShoot(); // Play the shoot sound
         }
     }
 }

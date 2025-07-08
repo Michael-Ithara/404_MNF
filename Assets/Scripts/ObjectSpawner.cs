@@ -158,7 +158,7 @@ public class ObjectSpawner : MonoBehaviour
                 if (tile != null)
                 {
                     // Apply padding to adjust spawn positions slightly inside the tile
-                    Vector3 place = start + new Vector3(x, y, 0) + new Vector3(padding, 0, 0);
+                    Vector3 place = start + new Vector3(x, y + 1f, 0) + new Vector3(padding, 0, 0);
                     place.z = 0; // Keep Z = 0 for tilemap position
                     validSpawnPositions.Add(place);
 
