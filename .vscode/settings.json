@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "404_MNF.sln"
+    "dotnet.defaultSolution": "404 Memory Not Found.sln"
 }

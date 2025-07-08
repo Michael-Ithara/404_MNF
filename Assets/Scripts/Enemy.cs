@@ -4,7 +4,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [Header("Player Reference")]
-    public Transform player; // Reference to the player
+    private Transform player; // Reference to the player
 
     [Header("Movement")]
     public float chaseSpeed = 3f; // Speed at which the enemy chases the player
