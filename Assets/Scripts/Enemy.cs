@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer spriteRenderer; // Reference to the SpriteRenderer for visual feedback
     private Color Ogcolor;
 
+public PlayerHealth playerHealth;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>(); // Get Rigidbody2D component
@@ -32,6 +34,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindWithTag("Player").GetComponent<Transform>(); // Find the player by tag
         currentHealth = maxHealth; // Initialize current health
         Ogcolor = spriteRenderer.color;
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
     }
 
     void Update()
@@ -94,6 +97,14 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject); // Destroy the enemy GameObject
     }
 
+void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+	    Debug.Log("Collided with player");
+            playerHealth.TakeDamage(1);
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         // Visualize ground check area

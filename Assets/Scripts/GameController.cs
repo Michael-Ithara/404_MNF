@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
@@ -44,9 +45,14 @@ public class GameController : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        int nextLevelIndex = (currentLevelIndex == levels.Count - 1) ? 0 : currentLevelIndex + 1;
         LoadCanvas.SetActive(false);
+	
+	if(currentLevelIndex == levels.Count - 1){
+		SceneManager.LoadScene(0); // Replace 0 With actual scene index
+		return;
+	}
 
+	int nextLevelIndex = currentLevelIndex + 1;
         levels[currentLevelIndex].gameObject.SetActive(false);
         levels[nextLevelIndex].gameObject.SetActive(true);
 

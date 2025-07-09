@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerHealth : MonoBehaviour
@@ -54,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Player has died.");
             StartCoroutine(Respawn());
             OnPlayerDied?.Invoke(); // Notify subscribers that the player has died
-
+            SceneManager.LoadScene(0);
         }
     }
 
