@@ -147,8 +147,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: cf55a15311546354192e73265edc9321, type: 3}
+  m_audioClip: {fileID: 8300000, guid: af0fa0b2451ae9145aa5ae093870f11c, type: 3}
+  m_Resource: {fileID: 8300000, guid: af0fa0b2451ae9145aa5ae093870f11c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -841,7 +841,6 @@ GameObject:
   - component: {fileID: 1453530162}
   - component: {fileID: 1453530161}
   - component: {fileID: 1453530160}
-  - component: {fileID: 1453530159}
   m_Layer: 5
   m_Name: MainMenuButton
   m_TagString: Untagged
@@ -869,19 +868,6 @@ RectTransform:
   m_AnchoredPosition: {x: -49, y: -66}
   m_SizeDelta: {x: 199.309, y: 36.5515}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1453530159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453530157}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c78ed4d529723fb49881a910c25208ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
 --- !u!114 &1453530160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,7 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fa4273e890cdff43a20e6b8d095be51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backButton: {fileID: 0}
+  backButton: {fileID: 1453530161}
 --- !u!114 &1453530161
 MonoBehaviour:
   m_ObjectHideFlags: 0

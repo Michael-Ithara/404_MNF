@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("Player has died.");
             StartCoroutine(Respawn());
             OnPlayerDied?.Invoke(); // Notify subscribers that the player has died
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(6);
         }
     }
 
