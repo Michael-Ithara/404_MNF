@@ -158,12 +158,16 @@ public class ObjectSpawner : MonoBehaviour
                 if (tile != null)
                 {
                     // Apply padding to adjust spawn positions slightly inside the tile
-                    Vector3 place = start + new Vector3(x, y + 1f, 0) + new Vector3(padding, 0, 0);
-                    place.z = 0; // Keep Z = 0 for tilemap position
-                    validSpawnPositions.Add(place);
+                    Vector3Int cellPos = new Vector3Int(boundsInt.xMin + x, boundsInt.yMin + y, 0);
+                    Vector3 worldPos = tilemap.CellToWorld(cellPos);
+                    worldPos.y += tilemap.cellSize.y * 2f; // Move spawn point on top of tile
+                    worldPos.x += padding;
+                    worldPos.z = 0; // Reset Z position to 0 for this step
+
+                    validSpawnPositions.Add(worldPos);
 
                     // Optional: log the valid spawn position for debugging
-                    Debug.Log("Valid spawn position: " + place);
+                    Debug.Log("Valid spawn position: " + worldPos);
                 }
             }
         }

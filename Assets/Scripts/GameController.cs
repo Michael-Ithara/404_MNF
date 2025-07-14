@@ -48,7 +48,7 @@ public class GameController : MonoBehaviour
         LoadCanvas.SetActive(false);
 	
 	if(currentLevelIndex == levels.Count - 1){
-		SceneManager.LoadScene(0); // Replace 0 With actual scene index
+		SceneManager.LoadScene(5); // Replace 0 With actual scene index
 		return;
 	}
 

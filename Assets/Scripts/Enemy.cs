@@ -97,14 +97,14 @@ public PlayerHealth playerHealth;
         Destroy(gameObject); // Destroy the enemy GameObject
     }
 
-void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-	    Debug.Log("Collided with player");
-            playerHealth.TakeDamage(1);
-        }
-    }
+// void OnTriggerEnter2D(Collider2D other)
+//     {
+//         if (other.CompareTag("Player"))
+//         {
+// 	    Debug.Log("Collided with player");
+//             playerHealth.TakeDamage(1);
+//         }
+//     }
     private void OnDrawGizmosSelected()
     {
         // Visualize ground check area
